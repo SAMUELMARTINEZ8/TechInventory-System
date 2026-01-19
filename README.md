@@ -11,13 +11,10 @@ Sistema de gestión de inventarios empresariales **Full Stack**. Esta versión i
 
 ## 📸 Galería del Proyecto
 
-<p align="center">
-### 🔐 Login Seguro
-  <img src="screenshots/login_preview.png" alt="Vista Login" width="45%" style="margin-right: 10px;">
-### 📊 Dashboard de Inventario
-  <img src="screenshots/dashboard_preview.png" alt="Vista Dashboard" width="45%">
-  <img src="screenshots/dashboard_preview2.png" alt="Vista Dashboard" width="45%">
-</p>
+| 🔐 Inicio de Sesión | 📊 Panel de Control |
+| :---: | :---: |
+| <img src="screenshots/login_preview.png" width="100%"> | <img src="screenshots/dashboard_preview.png" width="100%"> | <img src="screenshots/dashboard_preview2.png" width="100%"> |
+
 ---
 
 ## 📂 Estructura del Proyecto
