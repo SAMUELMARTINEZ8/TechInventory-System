@@ -1,55 +1,41 @@
-# ⚡ TechInventory System 
+# 📦 TechInventory Pro
 
-![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)
-![Flask](https://img.shields.io/badge/Flask-Framework-red?style=for-the-badge&logo=flask)
-![MySQL](https://img.shields.io/badge/MySQL-Database-orange?style=for-the-badge&logo=mysql)
-![Frontend](https://img.shields.io/badge/UI-Minimalist%20Apple%20Style-lightgrey?style=for-the-badge)
+> Sistema de Gestión de Inventario Inteligente desarrollado con Python y Flask.
 
-Sistema de gestión de inventarios empresariales **Full Stack**. Esta versión incluye autenticación segura, arquitectura MVC y una interfaz gráfica minimalista.
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-Microframework-000000?style=flat&logo=flask&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=flat&logo=mysql&logoColor=white)
+![Status](https://img.shields.io/badge/Estado-Terminado-success)
 
----
+## 📖 Descripción
+**TechInventory Pro** es una aplicación web completa para la administración de productos tecnológicos. Permite a las empresas mantener un control en tiempo real de su stock, gestionar precios y categorías, todo bajo una interfaz minimalista y segura.
 
-## 📸 Galería del Proyecto
+## ✨ Características Principales
+* **🔐 Autenticación Segura:** Sistema de Login y Registro con encriptación de contraseñas (Hash).
+* **📝 CRUD Completo:** Funcionalidades para **C**rear, **L**eer, **E**ditar y **E**liminar productos.
+* **🎨 Diseño Minimalista:** Interfaz limpia y moderna (CSS puro) enfocada en la experiencia de usuario (UX).
+* **🗄️ Base de Datos SQL:** Estructura relacional optimizada para alto rendimiento.
+* **📱 Responsive:** Adaptable a diferentes tamaños de pantalla.
 
-| 🔐 Login | 📊 Dashboard Principal | 📈 Detalles / Stock |
-| :---: | :---: | :---: |
-| <img src="screenshots/login_preview.png" width="100%"> | <img src="screenshots/dashboard_preview.png" width="100%"> | <img src="screenshots/dashboard_preview2.png" width="100%"> |
+## 🚀 Instalación y Configuración
 
----
+### 1. Requisitos Previos
+* Python 3.x
+* XAMPP (para MySQL)
+* Git
 
-## 📂 Estructura del Proyecto
+### 2. Configuración de la Base de Datos
+1.  Abre **XAMPP** e inicia los servicios Apache y MySQL.
+2.  Entra a **phpMyAdmin**.
+3.  Importa el archivo `db.sql` incluido en este repositorio o crea la base de datos `tech_inventory` manualmente.
 
-Aquí te explico qué hace cada archivo clave en el sistema:
+### 3. Ejecución del Proyecto
+```bash
+# Instalar dependencias
+pip install flask mysql-connector-python werkzeug
 
-| Archivo / Carpeta | Descripción |
-| :--- | :--- |
-| **`app.py`** | 🧠 **El Cerebro (Backend):** Controla el servidor Flask, maneja las rutas, la seguridad del login y conecta con la base de datos. |
-| **`templates/`** | 🖼️ **Vistas (HTML):** Contiene las páginas web (`index.html`, `login.html`) que ve el usuario. Usamos Jinja2 para inyectar datos. |
-| **`static/css/`** | 🎨 **Estilos:** Aquí vive `styles.css` con el diseño minimalista inspirado en Apple. |
-| **`static/js/`** | ⚡ **Lógica Cliente:** El archivo `app.js` maneja la interactividad (AJAX) para guardar productos sin recargar la página. |
-| **`static/images/`** | 📷 **Assets:** Aquí guardamos el logo y otros recursos gráficos. |
-| **`db.sql`** | 🗄️ **Base de Datos:** Script SQL para crear las tablas `usuarios` y `productos` automáticamente. |
-| **`.gitignore`** | 🛡️ **Escudo:** Le dice a Git qué archivos "basura" ignorar (como carpetas de entorno virtual). |
-
----
-
-## 🚀 Instalación Rápida
-
-1.  **Clonar repositorio:**
-    ```bash
-    git clone https://github.com/SAMUELMARTINEZ8/TechInventory-System.git
-    ```
-2.  **Instalar dependencias:**
-    ```bash
-    pip install flask mysql-connector-python werkzeug
-    ```
-3.  **Configurar Base de Datos:**
-    * Importar `db.sql` en tu gestor MySQL.
-    * Crear usuario administrador (ver documentación interna en `app.py`).
-4.  **Ejecutar:**
-    ```bash
-    python app.py
-    ```
+# Ejecutar el servidor
+python app.py
 
 ---
 *Desarrollado por Samuel Martinez* 🐵
