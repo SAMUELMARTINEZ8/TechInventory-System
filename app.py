@@ -9,7 +9,6 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 # 🔒 CONFIGURACIÓN DE BASE DE DATOS
-# ⚠️ IMPORTANTE: Cambia 'tech_inventory' por el nombre REAL que le pusiste en MySQL Workbench
 db_config = {
     'host': 'localhost',
     'user': 'root',
@@ -134,7 +133,7 @@ def editar_producto(id):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if 'user_id' in session:
-        return redirect(url_for('index')) # Corregido: redirige a 'index'
+        return redirect(url_for('index')) # Redirige a 'index'
         
     error = None
     if request.method == 'POST':
@@ -178,3 +177,5 @@ def add_producto():
         
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
+# Final Version 1.0
