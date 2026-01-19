@@ -49,6 +49,3 @@ Asegúrate de tener instalado:
 ```bash
 git clone [https://github.com/TU_USUARIO/TechInventoryWeb.git](https://github.com/TU_USUARIO/TechInventoryWeb.git)
 cd TechInventoryWeb
-
----
-*Desarrollado por Samuel Martinez 🐵*
