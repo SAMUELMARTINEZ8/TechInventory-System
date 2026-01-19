@@ -163,3 +163,39 @@ tr:last-child td {
     color: var(--text-secondary);
     font-weight: 500;
 }
+
+/* Botón de Eliminar Minimalista */
+.btn-delete {
+    background-color: #ff3b30; /* Rojo Apple */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #d70015; /* Rojo más oscuro al pasar el mouse */
+}
+
+/* --- ESTILOS FORZADOS PARA LOGIN Y REGISTRO --- */
+.login-body {
+    background-color: #f5f5f7; /* Fondo gris suave */
+    height: 100vh;             /* Altura completa de la pantalla */
+    display: flex;
+    justify-content: center;   /* Centrado horizontal */
+    align-items: center;       /* Centrado vertical */
+    margin: 0;
+}
+
+.login-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;       /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 100%;
+    max-width: 400px;          /* Ancho máximo para que no se estire */
+    text-align: left;
+}

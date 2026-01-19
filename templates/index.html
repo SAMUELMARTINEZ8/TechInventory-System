@@ -6,13 +6,12 @@
     <title>Dashboard - TechInventory Pro</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-<body>
 
-    <div class="container">
+<body> <div class="container">
+        
         <header class="main-header">
             <div class="logo-container">
                 <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" height="40" style="margin-right: 10px;">
-
                 <h1>TechInventory</h1>
             </div>
             <div class="user-info">
@@ -52,8 +51,9 @@
 
         <section class="card-minimal">
             <h2>📦 Inventario en Tiempo Real</h2>
+            
             <div class="table-container">
-                <table>
+                <table> 
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -61,43 +61,43 @@
                             <th>Categoría</th>
                             <th>Precio</th>
                             <th>Stock</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody id="tablaProductos">
-                        </tbody>
-                </table>
+
+                    <tbody id="tablaProductos"> 
+                        {% for p in productos %}
+                        <tr>
+                            <td>#{{ p[0] }}</td>
+                            <td><strong>{{ p[1] }}</strong></td>
+                            <td><span class="badge">{{ p[2] }}</span></td>
+                            <td>${{ p[3] }}</td>
+                            <td>{{ p[4] }}</td>
+                            
+                            <td style="display: flex; gap: 5px;">
+                                
+                                <a href="{{ url_for('editar_producto', id=p[0]) }}" 
+                                   class="btn-delete"
+                                   style="background-color: #007aff;"> 
+                                   Editar
+                                </a>
+
+                                <a href="{{ url_for('eliminar_producto', id=p[0]) }}" 
+                                   class="btn-delete"
+                                   onclick="return confirm('¿Estás seguro de que quieres eliminar este equipo?');">
+                                   Eliminar
+                                </a>
+
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table> 
             </div>
         </section>
     </div>
 
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-    <script>
-        // Pequeño ajuste al JS para el nuevo diseño de tabla
-        async function cargarProductos() {
-        try {
-            const respuesta = await fetch('/api/productos');
-            if (respuesta.status === 401) window.location.href = '/login'; // Si no hay sesión, redirigir
-            const productos = await respuesta.json();
-            
-            const tabla = document.getElementById('tablaProductos');
-            tabla.innerHTML = ''; 
-
-            productos.forEach(prod => {
-                const fila = `
-                    <tr>
-                        <td style="color: var(--text-secondary);">#${prod.id}</td>
-                        <td><strong>${prod.nombre}</strong></td>
-                        <td><span class="cat-pill">${prod.categoria}</span></td>
-                        <td>$${prod.precio}</td>
-                        <td><span style="font-weight: 600;">${prod.stock}</span></td>
-                    </tr>
-                `;
-                tabla.innerHTML += fila;
-            });
-        } catch (error) { console.error('Error:', error); }
-        }
-        // Sobreescribimos la función original al cargar
-        document.addEventListener('DOMContentLoaded', cargarProductos);
-    </script>
-</body>
+    
+    </body>
 </html>

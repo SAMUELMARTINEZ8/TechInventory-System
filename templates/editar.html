@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Producto - TechInventory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container" style="max-width: 600px; margin-top: 50px;">
+        
+        <section class="card-minimal">
+            <h2>✏️ Editar Producto #{{ p.id }}</h2>
+            
+            <form action="{{ url_for('editar_producto', id=p.id) }}" method="POST">
+                
+                <label>Nombre del Equipo</label>
+                <input type="text" name="nombre" value="{{ p.nombre }}" required>
+                
+                <label>Categoría</label>
+                <select name="categoria">
+                    <option value="Laptop" {% if p.categoria == 'Laptop' %}selected{% endif %}>Laptop / PC</option>
+                    <option value="Componentes" {% if p.categoria == 'Componentes' %}selected{% endif %}>Componentes Internos</option>
+                    <option value="Periféricos" {% if p.categoria == 'Periféricos' %}selected{% endif %}>Periféricos / Accesorios</option>
+                    <option value="Servidores" {% if p.categoria == 'Servidores' %}selected{% endif %}>Redes & Servidores</option>
+                </select>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <label>Precio ($)</label>
+                        <input type="number" name="precio" value="{{ p.precio }}" step="0.01" required>
+                    </div>
+                    <div>
+                        <label>Stock</label>
+                        <input type="number" name="stock" value="{{ p.stock }}" required>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px; display: flex; gap: 10px;">
+                    <button type="submit" class="btn-solid">💾 Guardar Cambios</button>
+                    <a href="{{ url_for('index') }}" class="btn-delete" style="background-color: #666;">Cancelar</a>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

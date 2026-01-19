@@ -1,7 +1,10 @@
 // Esperar a que la página cargue
+
 document.addEventListener('DOMContentLoaded', () => {
-    cargarProductos();
-});
+//    cargarProductos();
+}); 
+
+
 
 // 1. FUNCIÓN: Cargar productos desde Python
 async function cargarProductos() {
