@@ -11,8 +11,8 @@ Sistema de gestión de inventarios empresariales **Full Stack**. Esta versión i
 
 ## 📸 Galería del Proyecto
 
-| 🔐 Inicio de Sesión | 📊 Panel de Control |
-| :---: | :---: |
+| 🔐 Login | 📊 Dashboard Principal | 📈 Detalles / Stock |
+| :---: | :---: | :---: |
 | <img src="screenshots/login_preview.png" width="100%"> | <img src="screenshots/dashboard_preview.png" width="100%"> | <img src="screenshots/dashboard_preview2.png" width="100%"> |
 
 ---
