@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TechInventory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+
+    <div class="card-minimal" style="width: 100%; max-width: 400px;">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" height="50" style="margin-bottom: 15px;">
+            
+            <h2>Iniciar Sesión</h2>
+            <p style="color: var(--text-secondary);">Bienvenido a TechInventory</p>
+        </div>
+
+        {% if error %}
+            <div style="background: #ffebee; color: #c62828; padding: 10px; border-radius: 8px; margin-bottom: 20px; text-align: center;">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form method="POST">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@tech.com" required autofocus>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="••••••••" required>
+
+            <button type="submit" class="btn-solid">Entrar al Sistema</button>
+        </form>
+    </div>
+
+</body>
+</html>

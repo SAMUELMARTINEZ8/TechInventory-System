@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TechInventory Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <header class="main-header">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" height="40" style="margin-right: 10px;">
+
+                <h1>TechInventory</h1>
+            </div>
+            <div class="user-info">
+                <span>Hola, <strong>{{ nombre_usuario }}</strong></span>
+                <span>|</span>
+                <a href="{{ url_for('logout') }}" class="btn-logout">Cerrar Sesión</a>
+            </div>
+        </header>
+
+        <section class="card-minimal">
+            <h2>➕ Registrar Nuevo Equipo</h2>
+            <form id="techForm">
+                <label for="nombre">Nombre del Equipo</label>
+                <input type="text" id="nombre" placeholder="Ej. MacBook Pro M3" required>
+                
+                <label for="categoria">Categoría</label>
+                <select id="categoria">
+                    <option value="Laptop">Laptop / PC</option>
+                    <option value="Componentes">Componentes Internos</option>
+                    <option value="Periféricos">Periféricos / Accesorios</option>
+                    <option value="Servidores">Redes & Servidores</option>
+                </select>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <label for="precio">Precio ($)</label>
+                        <input type="number" id="precio" placeholder="0.00" step="0.01" required>
+                    </div>
+                    <div>
+                        <label for="stock">Stock Inicial</label>
+                        <input type="number" id="stock" placeholder="0" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-solid">Guardar en Inventario</button>
+            </form>
+        </section>
+
+        <section class="card-minimal">
+            <h2>📦 Inventario en Tiempo Real</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Equipo</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaProductos">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script>
+        // Pequeño ajuste al JS para el nuevo diseño de tabla
+        async function cargarProductos() {
+        try {
+            const respuesta = await fetch('/api/productos');
+            if (respuesta.status === 401) window.location.href = '/login'; // Si no hay sesión, redirigir
+            const productos = await respuesta.json();
+            
+            const tabla = document.getElementById('tablaProductos');
+            tabla.innerHTML = ''; 
+
+            productos.forEach(prod => {
+                const fila = `
+                    <tr>
+                        <td style="color: var(--text-secondary);">#${prod.id}</td>
+                        <td><strong>${prod.nombre}</strong></td>
+                        <td><span class="cat-pill">${prod.categoria}</span></td>
+                        <td>$${prod.precio}</td>
+                        <td><span style="font-weight: 600;">${prod.stock}</span></td>
+                    </tr>
+                `;
+                tabla.innerHTML += fila;
+            });
+        } catch (error) { console.error('Error:', error); }
+        }
+        // Sobreescribimos la función original al cargar
+        document.addEventListener('DOMContentLoaded', cargarProductos);
+    </script>
+</body>
+</html>
