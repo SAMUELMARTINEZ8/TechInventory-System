@@ -6,36 +6,49 @@
 ![Flask](https://img.shields.io/badge/Flask-Microframework-000000?style=flat&logo=flask&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=flat&logo=mysql&logoColor=white)
 ![Status](https://img.shields.io/badge/Estado-Terminado-success)
+![License](https://img.shields.io/badge/Licencia-MIT-green)
 
 ## 📖 Descripción
-**TechInventory Pro** es una aplicación web completa para la administración de productos tecnológicos. Permite a las empresas mantener un control en tiempo real de su stock, gestionar precios y categorías, todo bajo una interfaz minimalista y segura.
+
+**TechInventory Pro** es una aplicación web completa diseñada para la administración eficiente de productos tecnológicos. Este sistema permite a las empresas y administradores mantener un control en tiempo real de su stock, gestionar precios, categorías y usuarios, todo bajo una interfaz minimalista, moderna y segura.
+
+El proyecto implementa una arquitectura **MVC** (Modelo-Vista-Controlador) utilizando Flask como backend y MySQL como motor de base de datos.
 
 ## ✨ Características Principales
-* **🔐 Autenticación Segura:** Sistema de Login y Registro con encriptación de contraseñas (Hash).
-* **📝 CRUD Completo:** Funcionalidades para **C**rear, **L**eer, **E**ditar y **E**liminar productos.
-* **🎨 Diseño Minimalista:** Interfaz limpia y moderna (CSS puro) enfocada en la experiencia de usuario (UX).
-* **🗄️ Base de Datos SQL:** Estructura relacional optimizada para alto rendimiento.
-* **📱 Responsive:** Adaptable a diferentes tamaños de pantalla.
+
+### 🛠️ Gestión de Inventario (CRUD Completo)
+* **Crear:** Registro de nuevos equipos con categoría, precio y stock.
+* **Leer:** Visualización en tiempo real del inventario en una tabla dinámica.
+* **Actualizar:** Edición de productos existentes (precios, stock, nombres).
+* **Eliminar:** Borrado seguro de productos con confirmación de seguridad.
+
+### 🔐 Seguridad y Usuarios
+* **Login Seguro:** Sistema de autenticación de administradores.
+* **Registro de Usuarios:** Creación de nuevas cuentas administrativas.
+* **Protección de Datos:** Contraseñas encriptadas mediante Hashing (`werkzeug.security`).
+* **Control de Sesiones:** Protección de rutas (Middleware) para evitar accesos no autorizados.
+
+### 🎨 Diseño e Interfaz (UI/UX)
+* **Estilo Minimalista:** Diseño limpio inspirado en interfaces modernasS.
+* **Feedback Visual:** Alertas de stock, confirmaciones de eliminación y estados de carga.
+* **Responsive:** Adaptable a diferentes resoluciones de pantalla.
+
+---
 
 ## 🚀 Instalación y Configuración
 
+Sigue estos pasos para ejecutar el proyecto en tu entorno local.
+
 ### 1. Requisitos Previos
-* Python 3.x
-* XAMPP (para MySQL)
-* Git
+Asegúrate de tener instalado:
+* [Python 3.x](https://www.python.org/)
+* [XAMPP](https://www.apachefriends.org/) (o cualquier servidor MySQL)
+* [Git](https://git-scm.com/)
 
-### 2. Configuración de la Base de Datos
-1.  Abre **XAMPP** e inicia los servicios Apache y MySQL.
-2.  Entra a **phpMyAdmin**.
-3.  Importa el archivo `db.sql` incluido en este repositorio o crea la base de datos `tech_inventory` manualmente.
-
-### 3. Ejecución del Proyecto
+### 2. Clonar el Repositorio
 ```bash
-# Instalar dependencias
-pip install flask mysql-connector-python werkzeug
-
-# Ejecutar el servidor
-python app.py
+git clone [https://github.com/TU_USUARIO/TechInventoryWeb.git](https://github.com/TU_USUARIO/TechInventoryWeb.git)
+cd TechInventoryWeb
 
 ---
-*Desarrollado por Samuel Martinez* 🐵
+*Desarrollado por Samuel Martinez 🐵*
