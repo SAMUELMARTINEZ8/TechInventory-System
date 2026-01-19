@@ -153,6 +153,7 @@ tr:last-child td {
     border-bottom: none;
 }
 
+
 /* Categoría Pill */
 .cat-pill {
     background: var(--bg-body);
