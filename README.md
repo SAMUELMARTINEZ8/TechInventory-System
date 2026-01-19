@@ -11,13 +11,10 @@ Sistema de gestión de inventarios empresariales **Full Stack**. Esta versión i
 
 ## 📸 Galería del Proyecto
 
-## 📸 Galería del Proyecto
-
-Aquí tienes una vista previa del sistema funcionando con el nuevo diseño minimalista.
-
 <p align="center">
+### 🔐 Login Seguro
   <img src="screenshots/login_preview.png" alt="Vista Login" width="45%" style="margin-right: 10px;">
-
+### 📊 Dashboard de Inventario
   <img src="screenshots/dashboard_preview.png" alt="Vista Dashboard" width="45%">
   <img src="screenshots/dashboard_preview2.png" alt="Vista Dashboard" width="45%">
 </p>
