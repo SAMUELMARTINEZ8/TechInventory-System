@@ -101,33 +101,6 @@ def add_producto():
     conn.commit()
     conn.close()
     return jsonify({"mensaje": "OK"}), 201
-
-# --- HERRAMIENTA PARA CREAR EL PRIMER USUARIO ---
-# Descomenta estas líneas UNA SOLA VEZ, ejecuta el programa, y vuélvelas a comentar.
-# Esto creará tu usuario administrador.
-
-"""
-@app.route('/crear-admin')
-def crear_admin():
-    password_plano = 'admin123' 
-    hashed_pw = generate_password_hash(password_plano) # Tu Python calcula el hash correcto aquí
-    
-    conn = obtener_conexion()
-    cursor = conn.cursor()
-    try:
-        # Primero borramos cualquier rastro anterior para evitar errores
-        cursor.execute("DELETE FROM usuarios WHERE email = 'admin@tech.com'")
-        
-        # Insertamos el nuevo usuario limpio
-        cursor.execute("INSERT INTO usuarios (email, password_hash, nombre) VALUES (%s, %s, %s)",
-                       ('admin@tech.com', hashed_pw, 'Samuel Admin'))
-        conn.commit()
-        return "✅ ¡LISTO! Usuario creado. La contraseña admin123 ahora sí funcionará."
-    except Exception as e:
-        return f"Error: {e}"
-    finally:
-        conn.close()
-"""
         
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
