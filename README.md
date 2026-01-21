@@ -70,9 +70,9 @@ pip install -r requirements.txt
 ```
 
 ### 5. Base de Datos
-* 1. Abre tu gestor de base de datos (phpMyAdmin o Workbench).
-* 2. Importa el archivo db.sql que viene en el proyecto.
-* 3. Configura tus credenciales de MySQL en el archivo app.py.
+1. Abre tu gestor de base de datos (phpMyAdmin o Workbench).
+2. Importa el archivo db.sql que viene en el proyecto.
+3. Configura tus credenciales de MySQL en el archivo app.py.
 
 ### 6. Ejecutar la aplicación
 ```bash
